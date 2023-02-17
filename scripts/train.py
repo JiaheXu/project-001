@@ -19,8 +19,17 @@ import sys
 import argparse
 import traceback
 
-
-
+#my imports
+from pddm.policies.policy_random import Policy_Random
+from pddm.utils.helper_funcs import *
+from pddm.regressors.dynamics_model import Dyn_Model
+from pddm.policies.mpc_rollout import MPCRollout
+from pddm.utils.loader import Loader
+from pddm.utils.saver import Saver
+from pddm.utils.data_processor import DataProcessor
+from pddm.utils.data_structures import *
+from pddm.utils.convert_to_parser_args import convert_to_parser_args
+from pddm.utils import config_reader
 
 def main():
 
@@ -61,6 +70,7 @@ def main():
     output_dir = general_args.output_dir
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
+
     output_dir = os.path.abspath(output_dir)
 
     # Run separate experiment for each variant in the config
@@ -84,7 +94,7 @@ def main():
         ################
         ### run job
         ################
-
+        '''
         try:
             run_job(args, job['output_dir'])
         except (KeyboardInterrupt, SystemExit):
@@ -93,7 +103,8 @@ def main():
         except Exception as e:
             print('ERROR: Exception occured while running a job....')
             traceback.print_exc()
-
+        '''
+        
 
 if __name__ == '__main__':
     main()
