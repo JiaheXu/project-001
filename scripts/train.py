@@ -31,6 +31,9 @@ from pddm.utils.data_structures import *
 from pddm.utils.convert_to_parser_args import convert_to_parser_args
 from pddm.utils import config_reader
 
+def run_job(args, save_dir=None):
+
+
 def main():
 
     #####################
@@ -94,7 +97,7 @@ def main():
         ################
         ### run job
         ################
-        '''
+
         try:
             run_job(args, job['output_dir'])
         except (KeyboardInterrupt, SystemExit):
@@ -103,7 +106,7 @@ def main():
         except Exception as e:
             print('ERROR: Exception occured while running a job....')
             traceback.print_exc()
-        '''
+        #'''
         
 
 if __name__ == '__main__':
